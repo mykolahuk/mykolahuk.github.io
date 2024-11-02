@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .header {
+        background-size: cover;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000000;
+        padding: 0 20px;
+        z-index: 5;
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .main-content {
+        flex: 2;
+        padding: 20px;
+      }
+
+
+      footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.nome-cognome {
+    align-self: flex-start;
+}
+
+    </style>
+
+    <script>
+
+function CambioColore() {
+const titolo = document.getElementById('titolo');
+    let isRed = true; // Variabile per tenere traccia del colore attuale
+
+    setInterval(() => {
+        if (isRed) {
+            titolo.style.color = 'black'; 
+        } else {
+            titolo.style.color = 'red'; 
+        }
+        isRed = !isRed; // Inverti il valore della variabile, variando da vero a falso
+    }, 1000); // Imposto il valore in ms per cambiare il colore
+
+}
+
+    </script> 
+  </head>
+  <body onload="CambioColore()">
+    <header class="header">
+        <img src="https://picsum.photos/1920/400" alt="placeholder" width="100%">
+    </header>
+
+    <nav class="navbar" style=" margin-top: 5%;">
+      
+      <div>
+        <a href="index.html">Link 1</a>
+        <a href="pag2.html">Link 2</a>
+        <a href="pag3.html">Link 3</a>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 5%;">
+        <h1 id="titolo">Creare un pc da Gaming</h1>
+      <p>
+        Creare un PC gaming potente richiede una selezione accurata di componenti hardware. La scheda grafica (GPU) è il cuore di ogni sistema gaming, determinando la qualità della grafica e il frame rate. La CPU è altrettanto importante per gestire giochi complessi e per sfruttare i vantaggi della multitasking. Inoltre, una memoria RAM sufficiente e un disco SSD veloce sono essenziali per un'esperienza senza interruzioni. Vedremo insieme i componenti ideali per costruire un PC gaming che si adatti alle tue esigenze, dai setup entry-level alle configurazioni avanzate.
+
+        </p>
+    </div>
+
+    <img src="https://liberliber.it/wp-content/uploads/2015/03/Marcus-Tullius-Cicero.jpg" width="700px" style="margin-left: 18% ;">
+
+
+
+    
+    <footer>
+        <div class="footer-content">
+            <p class="nome-cognome">Mykola Huk</p>
+            <p style="margin-left: 87%;">Data</p>
+        </div>
+    </footer>
+  </body>
+</html>
