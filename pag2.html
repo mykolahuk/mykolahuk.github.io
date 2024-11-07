@@ -1,122 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      .header {
-        background-size: cover;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #000000;
-        padding: 0 20px;
-        z-index: 5;
-      }
-
-      .navbar a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-
-
-
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .column {
-        flex: 1;
-        padding: 20px;
-      }
-
-      .main-content {
-        flex: 2;
-        padding: 20px;
-      }
-
-
-      footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-}
-
-.nome-cognome {
-    align-self: flex-start;
-}
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
     <script>
+      function CambioColore() {
+        const titolo = document.getElementById('titolo');
+        let isRed = true;
 
-function CambioColore() {
-const titolo = document.getElementById('titolo');
-    let isRed = true; // Variabile per tenere traccia del colore attuale
-
-    setInterval(() => {
-        if (isRed) {
-            titolo.style.color = 'black'; 
-        } else {
-            titolo.style.color = 'red'; 
-        }
-        isRed = !isRed; // Inverti il valore della variabile, variando da vero a falso
-    }, 1000); // Imposto il valore in ms per cambiare il colore
-
-}
-
-    </script> 
+        setInterval(() => {
+            titolo.style.color = isRed ? 'black' : 'red';
+            isRed = !isRed;
+        }, 1000);
+      }
+    </script>
   </head>
   <body onload="CambioColore()">
-    <header class="header">
-        <img src="https://picsum.photos/1920/400" alt="placeholder" width="100%">
+    
+    <!-- Immagine Superiore-->
+    <header>
+      <img src="https://i.imgur.com/bmbfFzN.jpg" alt="Placeholder" style="width: 100%; height: 200px; object-fit: cover;">
+      <!--div class="main-title">Pagina 2</div-->
     </header>
-
-    <nav class="navbar" style=" margin-top: 5%;">
-      
-      <div>
-        <a href="index.html">Link 1</a>
-        <a href="pag2.html">Link 2</a>
-        <a href="pag3.html">Link 3</a>
-      </div>
+    
+    <!-- Menu -->
+    <nav class="navbar">
+      <a href="index.html">Link 1</a>
+      <a href="pag2.html">Link 2</a>
+      <a href="pag3.html">Link 3</a>
     </nav>
 
-    <div class="container" style="margin-top: 5%;">
-        <h1 id="titolo">Creare un pc da Gaming</h1>
+    <!-- Text -->
+    <div class="container">
+      <h1 id="titolo">Creare un PC da Gaming</h1>
       <p>
         Creare un PC gaming potente richiede una selezione accurata di componenti hardware. La scheda grafica (GPU) è il cuore di ogni sistema gaming, determinando la qualità della grafica e il frame rate. La CPU è altrettanto importante per gestire giochi complessi e per sfruttare i vantaggi della multitasking. Inoltre, una memoria RAM sufficiente e un disco SSD veloce sono essenziali per un'esperienza senza interruzioni. Vedremo insieme i componenti ideali per costruire un PC gaming che si adatti alle tue esigenze, dai setup entry-level alle configurazioni avanzate.
-
-        </p>
+      </p>
     </div>
 
-    <img src="https://liberliber.it/wp-content/uploads/2015/03/Marcus-Tullius-Cicero.jpg" width="700px" style="margin-left: 18% ;">
+    <!-- Immagine  -->
+    <img src="https://i.pinimg.com/originals/a2/2f/53/a22f531891f4955e36b4179964a1d58c.gif" class="additional-image" alt="Additional Image">
 
-
-
-    
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p class="nome-cognome">Mykola Huk</p>
-            <p style="margin-left: 87%;">Data</p>
-        </div>
+      <div class="footer-content">
+        <p class="nome-cognome">Mykola Huk</p>
+        <p id="current-date"></p>
+      </div>
     </footer>
+
+    <script>
+      // JS data
+      const dateElement = document.getElementById("current-date");
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      dateElement.textContent = today.toLocaleDateString('it-IT', options);
+    </script>
   </body>
 </html>

@@ -1,114 +1,165 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+      /* Applica il box-sizing a tutti gli elementi */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Impostazioni globali per il body */
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        /*scrollbar-width: none;*/
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      /* Header a larghezza piena */
       .header {
-        background-image: url('your-logo-image-url');
-        background-size: cover;
-        height: 100px;
+        position: relative;
+        width: 100%; 
+        height: 200px; 
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 0;
+      }
+      
+
+      /* Stile per il titolo con sfondo limitato al testo */
+      .main-title {
+        font-size: 32px; 
+        font-weight: bold;
+        color: white;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.7); /* Sfondo semitrasparente per contrasto */
+        border-radius: 5px;
+        position: absolute;
       }
 
+      /* Stile per la navbar */
       .navbar {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #000000;
-        padding: 0 20px;
-        z-index: 5;
+        justify-content: center;
+        background-color: #003366;
+        padding: 10px;
+        margin-top: 5px;
       }
 
       .navbar a {
         color: #fff;
         text-decoration: none;
+        padding: 8px 15px;
         margin: 0 10px;
+        background-color: #00509e;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
       }
 
+      .navbar a:hover {
+        background-color: #0077cc;
+      }
 
-
+      /* Stili per il contenitore e i testi */
       .container {
         display: flex;
         flex-wrap: wrap;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 40px auto;
+        padding-bottom: 60px;
       }
 
+      /* Colonne laterali ridotte */
       .column {
-        flex: 1;
+        flex-basis: 25%;
         padding: 20px;
       }
 
+      /* Colonna centrale più ampia */
       .main-content {
-        flex: 2;
+        flex-basis: 50%;
         padding: 20px;
       }
-
 
       footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
 
-.footer-content {
-    display: flex;
-}
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+      }
 
-.nome-cognome {
-    align-self: flex-start;
-}
-
-
+      .nome-cognome {
+        align-self: flex-start;
+      }
 
     </style>
   </head>
   <body>
+    
     <header class="header">
-        <img src="1920x400.png" alt="placeholder" width="100%">
+      <!-- Immagine gestita tramite HTML -->
+      <img src="1920x400.png" alt="Guida al Personal Computer" style="width: 100%; height: 200px; object-fit: cover;">
+      <div class="main-title">Guida al Personal Computer: Storia, Componenti e Ottimizzazione</div>
     </header>
-
-    <nav class="navbar" style=" margin-top: 5%;">
-      
-      <div>
-        <a href="index.html">Link 1</a>
-        <a href="pag2.html">Link 2</a>
-        <a href="pag3.html">Link 3</a>
-      </div>
+    
+    <!-- Navbar posizionata sotto l'immagine -->
+    <nav class="navbar">
+      <a href="index.html">Link 1</a>
+      <a href="pag2.html">Link 2</a>
+      <a href="pag3.html">Link 3</a>
     </nav>
 
-    <div class="container" style="margin-top: 5%;">
+    <div class="container">
       <div class="column">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae harum distinctio aperiam. Aliquid officiis hic, aut tempore doloribus eligendi unde quidem quia quos, adipisci facilis, architecto iusto quisquam enim perspiciatis.</p>
+        <p><strong>Introduzione al PC e alla sua storia</strong></p>
+        <p>
+          Il personal computer (PC) ha rivoluzionato il modo in cui viviamo e lavoriamo. Dagli anni '80, quando i PC iniziarono a diffondersi nelle case e negli uffici, questi dispositivi hanno subito una rapida evoluzione. Oggi i computer sono strumenti essenziali per il lavoro, l'intrattenimento e l'educazione. Il loro sviluppo ha portato a miglioramenti costanti nelle prestazioni, nella capacità di archiviazione e nelle funzionalità grafiche, rendendo possibile l'utilizzo di applicazioni sempre più complesse e innovative.
+        </p>
       </div>
       <div class="main-content">
-
-        <p style="color: red;"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores placeat dicta voluptates blanditiis quasi sapiente maiores nesciunt, corrupti quisquam sint libero? Dolores neque ratione ipsa est quam repellendus magni quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima repellendus dolor libero nemo quia aspernatur similique, animi autem voluptates quisquam. Magni eius deserunt exercitationem dignissimos minima tempora cum cupiditate neque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi impedit fugiat corporis quae ex, obcaecati aliquid delectus? Nobis neque sit maiores corporis dolorem maxime, quis, dignissimos suscipit est cum molestiae.</p>
+        <p><strong>Componenti Principali e Funzionamento del PC</strong></p>
+        <p>
+          Un PC è composto da diversi componenti essenziali, ciascuno con un ruolo specifico per garantire prestazioni ottimali. Il processore o CPU (Central Processing Unit) è considerato il "cervello" del computer, dove vengono eseguiti i calcoli e le operazioni logiche. La RAM (Random Access Memory) è la memoria temporanea che fornisce l’accesso rapido ai dati utilizzati dalle applicazioni in esecuzione, facilitando un’esperienza fluida. Più RAM significa maggiore capacità di gestire programmi complessi e multitasking.
+          La scheda madre è il circuito principale che connette tutti i componenti, inclusi CPU, RAM e unità di archiviazione. Questa permette la comunicazione tra le diverse parti del PC e distribuisce l’energia fornita dall’alimentatore, che converte la corrente alternata in corrente continua per alimentare correttamente ogni componente.
+          Il disco rigido o SSD (Solid State Drive) è l’unità di archiviazione permanente, dove vengono conservati sistema operativo, programmi e dati. A differenza degli HDD tradizionali, gli SSD sono molto più veloci poiché non hanno parti mobili, il che si traduce in tempi di avvio più rapidi e velocità di accesso ai dati notevolmente superiori.
+          La scheda grafica, essenziale per applicazioni grafiche e giochi, elabora e rende le immagini sullo schermo. Per chi utilizza il PC per attività che richiedono un’intensa elaborazione grafica, come il gaming o il rendering video, una scheda grafica dedicata è fondamentale. Infine, il sistema di raffreddamento, costituito da ventole o sistemi a liquido, è necessario per mantenere le temperature dei componenti stabili e prevenire surriscaldamenti che potrebbero danneggiare il sistema.
+        </p>
       </div>
       <div class="column">
+        <p><strong>Migliorare le Prestazioni del Proprio PC</strong></p>
         <p> 
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci accusamus iure magnam, delectus animi id obcaecati aliquid numquam ab atque eligendi aliquam facilis doloremque velit ipsum ratione odio placeat dolores.
+          Esistono diversi modi per ottimizzare le prestazioni del proprio PC. Aggiornare la memoria RAM e passare a un SSD sono ottime opzioni per migliorare la velocità complessiva. Mantenere il sistema operativo aggiornato e utilizzare programmi di manutenzione per pulire il disco da file inutili può aiutare a mantenere il PC scattante. Anche la gestione delle applicazioni in background e l’aggiornamento dei driver possono fare una grande differenza, soprattutto per chi usa il PC per applicazioni pesanti come il gaming o il montaggio video.
         </p>
       </div>
     </div>
 
-
-    <img src="https://picsum.photos/1920/200" style="margin-bottom: -18%; margin-left: -3%;">
-
-
-    <script src="https://www.gdprset.it/widget/gdpr-it-1.js" type="text/javascript"></script>
-    
     <footer>
-        <div class="footer-content">
-            <p class="nome-cognome">Mykola Huk</p>
-            <p style="margin-left: 87%;">Data</p>
-        </div>
+      <div class="footer-content">
+        <p class="nome-cognome">Mykola Huk</p>
+        <p id="current-date"></p>
+      </div>
     </footer>
+
+    <script>
+      // JavaScript per inserire la data corrente
+      const dateElement = document.getElementById("current-date");
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      dateElement.textContent = today.toLocaleDateString('it-IT', options);
+    </script>
   </body>
 </html>
